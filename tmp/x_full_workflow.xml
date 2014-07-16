@@ -1,0 +1,66 @@
+<!-- createClient -->
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:x="http://localhost/x/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <x:createClient soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+            <auth xsi:type="x:authorization">
+                <username xsi:type="xsd:string">sloza</username>
+                <password xsi:type="xsd:string">123</password>
+            </auth>
+            <subscriberId xsi:type="xsd:string">123456</subscriberId>
+            <firstName xsi:type="xsd:string">JOHN</firstName>
+            <lastName xsi:type="xsd:string">DOE</lastName>
+            <ssn xsi:type="xsd:string">123-45-6789</ssn>
+            <dob xsi:type="xsd:string">1950-01-01</dob>
+            <referenceId xsi:type="xsd:string">Cli001</referenceId>
+            <middleInitial xsi:type="xsd:string">X</middleInitial>
+            <address xsi:type="x:soapAddress">
+                <line1 xsi:type="xsd:string">123 MAIN ST</line1>
+                <!--Optional:-->
+                <line2 xsi:type="xsd:string">APT 1A</line2>
+                <city xsi:type="xsd:string">NEW YORK</city>
+                <state xsi:type="xsd:string">NY</state>
+                <zipcode xsi:type="xsd:string">10001</zipcode>
+            </address>
+            <homePhone xsi:type="xsd:string">2125551234</homePhone>
+            <mobilePhone xsi:type="xsd:string">2125551234</mobilePhone>
+            <workPhone xsi:type="xsd:string"></workPhone>
+            <email xsi:type="xsd:string"></email>
+        </x:createClient>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+<!-- updateClient -->
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:x="http://localhost/x/">
+<soapenv:Header/>
+<soapenv:Body>
+    <x:updateClient soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <auth xsi:type="x:authorization">
+            <username xsi:type="xsd:string">sloza</username>
+            <password xsi:type="xsd:string">123</password>
+        </auth>
+        <subscriberId xsi:type="xsd:string">123456</subscriberId>
+        <clientId xsi:type="x:soapId">
+            <!--Optional:-->
+            <referenceId xsi:type="xsd:string">Cli001</referenceId>
+        </clientId>
+        <firstName xsi:type="xsd:string">JOHN</firstName>
+        <lastName xsi:type="xsd:string">DOE</lastName>
+        <ssn xsi:type="xsd:string">>123-45-6789</ssn>
+        <dob xsi:type="xsd:string">1950-01-01</dob>
+        <middleInitial xsi:type="xsd:string"></middleInitial>
+        <address xsi:type="x:soapAddress">
+            <line1 xsi:type="xsd:string">123 MAIN ST</line1>
+            <!--Optional:-->
+            <line2 xsi:type="xsd:string">APT 1A</line2>
+            <city xsi:type="xsd:string">NEW YORK</city>
+            <state xsi:type="xsd:string">NY</state>
+            <zipcode xsi:type="xsd:string">10001</zipcode>
+        </address>
+        <homePhone xsi:type="xsd:string">2125551234</homePhone>
+        <mobilePhone xsi:type="xsd:string">2125551234</mobilePhone>
+        <workPhone xsi:type="xsd:string">2125551234</workPhone>
+        <email xsi:type="xsd:string"></email>
+    </x:updateClient>
+</soapenv:Body>
+</soapenv:Envelope>

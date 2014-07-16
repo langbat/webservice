@@ -20,7 +20,7 @@ So any change must be first on develop, then merge it to master. And with this e
     * For mac: [mac.github.com](http://mac.github.com/)
     * On Centos run this line: `yum install git-core`
 
-    1.2 On command line you can clone with this: `git clone git@github.com:refundo/x.git /path/to/rto/`
+    1.2 On command line you can clone with this: `git clone git@github.com:langbat/webservice.git /path/to/rto/`
 
     1.3 Then use branch develop `git checkout develop`
 
@@ -112,7 +112,7 @@ So any change must be first on develop, then merge it to master. And with this e
     ```
 1. Give `tmp/` folder full permission
 1. Download database dump
-    * Latest dump from [here](http://x.refundo.com/tmp/project_x%20\(6\).sql.zip)
+    * Latest dump from [here](http://x.refundo.com/tmp/project_x.sql)
 1. Create a MySQL database called `project_x`
 1. Verify that you have installed the following PHP drivers (you can verify with command line `php --ri <name>`)
     * mbstring

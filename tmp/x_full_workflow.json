@@ -1,0 +1,339 @@
+//to start with test, empty the database
+delete from schedules;
+delete from transactions;
+delete from externalaccounts;
+delete from accounts;
+delete from clients;
+
+//createClient
+{
+    "authentication":{
+        "apiKey":"aac5ec8c691dec87d86c8a6f91661001",
+        "secret":"15b9c242934242cba429b74b2699f001"
+    },
+    "subscriberId":123456,
+    "referenceId":"Cli001",
+    "firstName":"JOHN",
+    "lastName":"DOE",
+    "middleInitial":"X",
+    "ssn":"123-45-6789",
+    "dob":"1950-01-01",
+    "address":{
+        "line1":"123 MAIN ST",
+        "line2":"APT 1A",
+        "city":"NEW YORK",
+        "state":"NY",
+        "zipcode":"10001"
+    },
+    "homePhone":"2125551234",
+    "mobilePhone":"2125551234",
+    "workPhone":""
+}
+{
+    "authentication":{
+        "apiKey":"aac5ec8c691dec87d86c8a6f91661001",
+        "secret":"15b9c242934242cba429b74b2699f001"
+    },
+    "subscriberId":123456,
+    "referenceId":"Cli002",
+    "firstName":"cancel",
+    "lastName":"client",
+    "middleInitial":"X",
+    "ssn":"123-45-0000",
+    "dob":"1950-01-01"
+}
+{
+    "authentication":{
+        "apiKey":"aac5ec8c691dec87d86c8a6f91661001",
+        "secret":"15b9c242934242cba429b74b2699f001"
+    },
+    "subscriberId":123456,
+    "referenceId":"Cli003",
+    "firstName":"cancel",
+    "lastName":"client",
+    "middleInitial":"X",
+    "ssn":"123-45-0000",
+    "dob":"1950-01-01"
+}
+//updateClient
+{
+    "authentication":{
+        "apiKey":"aac5ec8c691dec87d86c8a6f91661001",
+        "secret":"15b9c242934242cba429b74b2699f001"
+    },
+    "subscriberId":123456,
+    "clientId": {
+        "referenceId": "Cli001"
+    },
+    "address":{
+        "line1":"123 MAIN ST",
+        "line2":"APT 1A",
+        "city":"NEW YORK",
+        "state":"NY",
+        "zipcode":"10001"
+    },
+    "workPhone":"2125551234"
+}
+{
+    "authentication":{
+        "apiKey":"aac5ec8c691dec87d86c8a6f91661001",
+        "secret":"15b9c242934242cba429b74b2699f001"
+    },
+    "subscriberId":123456,
+    "clientId": {
+        "referenceId": "Cli002"
+    },
+    "middleInitial":""
+}
+//verifyClient 
+{
+    "authentication": {
+        "apiKey": "aac5ec8c691dec87d86c8a6f91661001",
+        "secret": "15b9c242934242cba429b74b2699f001"
+    },
+    "subscriberId": 123456,
+    "clientId": {
+        "referenceId" : "Cli001"
+    }
+}
+//updateClientStatus
+{
+    "authentication": {
+        "apiKey": "aac5ec8c691dec87d86c8a6f91661001",
+        "secret": "15b9c242934242cba429b74b2699f001"
+    },
+    "subscriberId": 123456,
+    "clientId": {
+        "referenceId" : "Cli003"
+    },
+    "clientStatus": "INACTIVE"
+}
+//cancelClient
+{
+    "authentication": {
+        "apiKey": "aac5ec8c691dec87d86c8a6f91661001",
+        "secret": "15b9c242934242cba429b74b2699f001"
+    },
+    "subscriberId": 123456,
+    "clientId": {
+        "referenceId" : "Cli002"
+    },
+    "comment": "INACTIVE"
+}
+//getClient
+{
+    "authentication": {
+        "apiKey": "aac5ec8c691dec87d86c8a6f91661001",
+        "secret": "15b9c242934242cba429b74b2699f001"
+    },
+    "subscriberId": 123456,
+    "clientId": {
+        "referenceId" : "Cli002"
+    }
+}
+{
+    "authentication": {
+        "apiKey": "aac5ec8c691dec87d86c8a6f91661001",
+        "secret": "15b9c242934242cba429b74b2699f001"
+    },
+    "subscriberId": 123456,
+    "clientId": {
+        "id" : 1
+    }
+}
+//openAccount
+{
+    "authentication":{
+        "apiKey":"aac5ec8c691dec87d86c8a6f91661001",
+        "secret":"15b9c242934242cba429b74b2699f001"
+    },
+    "subscriberId":123456,
+    "clientId" : {
+        "referenceId": "Cli001"
+    },
+    "referenceId": "Acc001",
+    "title": "test title"
+}
+{
+    "authentication":{
+        "apiKey":"aac5ec8c691dec87d86c8a6f91661001",
+        "secret":"15b9c242934242cba429b74b2699f001"
+    },
+    "subscriberId":123456,
+    "clientId" : {
+        "referenceId": "Cli001"
+    },
+    "referenceId": "Acc002",
+    "title": "another test"
+}
+//updateAccount
+{
+    "authentication":{
+        "apiKey":"aac5ec8c691dec87d86c8a6f91661001",
+        "secret":"15b9c242934242cba429b74b2699f001"
+    },
+    "subscriberId":123456,
+    "accountId" : {
+        "referenceId": "Acc001"
+    },
+    "title": "update title"
+}
+//getAccountActivity
+{
+    "authentication":{
+        "apiKey":"aac5ec8c691dec87d86c8a6f91661001",
+        "secret":"15b9c242934242cba429b74b2699f001"
+    },
+    "subscriberId":123456,
+    "accountId" : {
+        "referenceId": "Acc001"
+    },
+    "fromDate": "2013-01-01",
+    "toDate": "2013-12-31"
+}
+//linkExternalAccount
+{
+    "authentication":{
+        "apiKey":"aac5ec8c691dec87d86c8a6f91661001",
+        "secret":"15b9c242934242cba429b74b2699f001"
+    },
+    "subscriberId":123456,
+    "clientId": {
+        "referenceId": "Cli001"
+    },
+    "referenceId": "Ext001",
+    "externalAccountInfo":{
+        "holderName": "john",
+        "bankName": "John Doe test",
+        "routingNumber": "021200025",
+        "accountNumber": "123456123456123",
+        "accountName": "micheal Doe",
+        "accountType": "C"
+    }
+}
+//updateLinkedExternalAccount
+{
+    "authentication":{
+        "apiKey":"aac5ec8c691dec87d86c8a6f91661001",
+        "secret":"15b9c242934242cba429b74b2699f001"
+    },
+    "subscriberId":123456,
+    "linkedExternalAccountId": {
+        "referenceId": "Ext001"
+    },
+    "externalAccountInfo":{
+        "holderName": "john",
+        "bankName": "John Doe test",
+        "routingNumber": "123456789",
+        "accountNumber": "12345123",
+        "accountName": "micheal Doe",
+        "accountType": "C"
+    }
+}
+//transferFunds
+{
+    "authentication":{
+        "apiKey":"aac5ec8c691dec87d86c8a6f91661001",
+        "secret":"15b9c242934242cba429b74b2699f001"
+    },
+    "subscriberId":123456,
+    "sourceAccount": {
+        "referenceId": "Acc001"
+    },
+    "destinationAccount": {
+        "referenceId": "Acc002"
+    },
+    "memo": "test transfer",
+    "items": [
+        {
+            "referenceId": "Tra001",
+            "memo": "first transaction",
+            "amount": 10.01,
+            "scheduled": {
+                "scheduleDate": "2014-01-01"
+            }
+        },{
+            "referenceId": "Tra002",
+            "memo": "second transaction",
+            "amount": 4.99
+        },{
+            "referenceId": "Tra003",
+            "amount": 5
+        }
+    ]
+}
+//sendFunds
+{
+    "authentication":{
+        "apiKey":"aac5ec8c691dec87d86c8a6f91661001",
+        "secret":"15b9c242934242cba429b74b2699f001"
+    },
+    "subscriberId":123456,
+    "method": "ach",
+    "sourceAccount": {
+        "referenceId": "Acc001"
+    },
+    "destination": {
+        "linkedExternalAccountId": {
+            "referenceId": "Ext001"
+        }
+    },
+    "memo": "test send",
+    "items": [
+        {
+            "referenceId": "Tra004",
+            "memo": "first transaction",
+            "amount": 20.01,
+            "scheduled": {
+                "scheduleDate": "2014-01-01"
+            }
+        },{
+            "referenceId": "Tra005",
+            "memo": "second transaction",
+            "amount": 14.99
+        },{
+            "referenceId": "Tra006",
+            "amount": 15
+        }
+    ]
+}
+//returnFunds
+{
+    "authentication":{
+        "apiKey":"aac5ec8c691dec87d86c8a6f91661001",
+        "secret":"15b9c242934242cba429b74b2699f001"
+    },
+    "subscriberId":123456,
+    "scheduleId": {
+        "referenceId": "Tra001"
+    },
+    "reasonForRefund": "test refund"
+}
+//deleteLinkedExternalAccount
+{
+    "authentication":{
+        "apiKey":"aac5ec8c691dec87d86c8a6f91661001",
+        "secret":"15b9c242934242cba429b74b2699f001"
+    },
+    "subscriberId":123456,
+    "linkedExternalAccountId": {
+        "referenceId": "Ext001"
+    }
+}
+//closeAccount
+{
+    "authentication":{
+        "apiKey":"aac5ec8c691dec87d86c8a6f91661001",
+        "secret":"15b9c242934242cba429b74b2699f001"
+    },
+    "subscriberId":123456,
+    "accountId" : {
+        "referenceId": "Acc001"
+    },
+    "withdrawalMethod": "ACH",
+    "withdrawalAccount": {
+        "linkedAccountId": {
+            "referenceId": "Ext001"
+        }
+    }
+}
